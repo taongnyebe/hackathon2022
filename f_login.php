@@ -8,11 +8,10 @@
     case 0:
       $_SESSION['login']= "<p class='success'>Login Successfully</p>";
       $_SESSION['user'] = $_POST['username'];
-      $_SESSION['user']."   ";
-      header("Location:./");
+      header("Location:./admin_queue.php");
       break;
     case 1:
-      $_SESSION['error'] = "<p class='error'>Wrong Password</p>";
+      echo $_SESSION['error'] = "<p class='error'>Wrong Password</p>";
       header("Location:./login.php");
       break;
     case 2:

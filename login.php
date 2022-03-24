@@ -5,7 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <?php include_once "./templates/cdjn.php" ?>
+  <?php 
+    include_once "./templates/cdjn.php";
+    include_once "./templates/functions.php";
+  ?>
 
   <title>Impact Hackthon 2022</title>
 </head>
@@ -41,12 +44,14 @@
                 style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
             </div>
 
-            <?php
-              if (isset($_SESSION['error'])) {
-                echo $_SESSION['error'];
-                unset($_SESSION['error']);
-              }
-            ?>
+            <div class="">
+              <?php
+                if (isset($_SESSION['error'])) {
+                  echo $_SESSION['error'];
+                  unset($_SESSION['error']);
+                }
+              ?>
+            </div>
 
           </form>
         </div>

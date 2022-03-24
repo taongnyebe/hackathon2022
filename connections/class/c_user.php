@@ -28,13 +28,13 @@ class Login extends multi_functions
   {
         if ($this->tablechecker())
         {
-              if ($username != null && $password != null)
-              {
-                    $this->username = $username;
-                    $this->password = $password;
-              }
+            if ($username != null && $password != null)
+            {
+                  $this->username = $username;
+                  $this->password = $password;
+            }
 
-              return $this->checkUser();
+            return $this->checkUser();
         }
 
         return 10;
@@ -46,14 +46,16 @@ class Login extends multi_functions
                                                         WHERE username='$this->username' AND active=1"))
         {
               if ($userdata = mysqli_fetch_assoc($connection)) {
+                    //echo $this->password;
+                    //echo $userdata['password'];
                     if ($userdata['password'] == $this->password) 
-                          $this->result = 0;
+                        return $this->result = 0;
                     else
-                          $this->result = 1;
+                        return $this->result = 1;
   
               } else
-                    $this->result = 2;
+                    return $this->result = 2;
         } else
-              $this->result = 502;   
+              return $this->result = 502;   
   }
 }
