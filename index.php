@@ -4,12 +4,32 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<style type="text/css">
+		#loader {
+			height: 100vh;
+			align-items: center;
+			display: flex;
+			justify-content: center;
+
+		}
+		.progress {
+			display: none;
+		}
+
+		.errorMsg {
+			font-size: 34px;
+			height: 100vh;
+			align-items: center;
+			display: flex;
+			justify-content: center;
   
   <?php 
     include_once "./templates/cdjn.php";
     include_once "./templates/functions.php";
   ?>
 
+<<<<<<< Updated upstream
     <title>Impact Hackthon 2022</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
@@ -128,5 +148,47 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts1.js"></script>
+=======
+  <title>Impact Hackthon 2022</title>
+</head>
+<body>
+  <?php include_once "./templates/header.php" ?>
+	<div class="navbar-fixed">
+		<nav class="teal">
+			<div class="nav-wrapper">
+				<div class="container">
+					<a href="#" class="brand-logo">News Api</a>
+					<ul id="nav-mobile" class="right hide-on-med-and-down">
+						<li class="active"><a href="index.html">News</a></li>
+						<li><a href="about.html">About us</a></li>
+						<li><a href="contact.html">Contact us</a></li>
+					</ul>
+				</div>
+
+			</div>
+		</nav>
+	</div>
+
+
+	<div class="container">
+		<h4>Most Recent News in Cauayan</h4>
+		<div class="row">
+			<div id="newsResults"></div>
+		</div>
+
+		<div id="loader">
+			<div class="progress">
+				<div class="indeterminate"></div>
+			</div>
+		</div>
+
+	</div>
+
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/materialize.min.js"></script>
+	<script src="js/app.js"></script>
+
+  </div>
+>>>>>>> Stashed changes
 </body>
 </html>
