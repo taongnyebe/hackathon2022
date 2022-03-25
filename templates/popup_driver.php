@@ -2,7 +2,7 @@
   <br>
   <div class="close-btn" onclick="toggleForm()">&times;</div>
   <h1>Add Queue</h1>
-  <form action="" method="post">
+  <form action="./f_add.php?type=registered" method="post">
     <div class="form-element">
         <label for="f_name">First name</label>
         <input type="text" id="f_name" name="f_name">

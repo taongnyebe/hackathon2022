@@ -16,13 +16,10 @@ class Drivers extends multi_functions
     return $this->checker($sql_c);
   }
 
-  public function updateDrivers($id)
+  public function addDriver($fname, $mname, $lname, $suffix, $plate, $todaid)
   {
-    
-  }
-
-  public function deleteDrivers($id)
-  {
-    
+    $sql_c = "INSERT INTO $this->table (tricycle_id, f_name, m_name, l_name, suffix, plate, toda_address, active)
+               VALUE ('$todaid', '$fname', '$mname', '$lname', '$suffix', '$plate', 'Address 1', 1)";
+    mysqli_query($this->db->con, $sql_c);
   }
 }

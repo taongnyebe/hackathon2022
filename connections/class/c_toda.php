@@ -25,8 +25,8 @@ class Toda extends multi_functions
 
   public function addToda($name, $route_1, $route_2, $fee)
   {
-    echo $sql_c = "INSERT INTO $this->table (toda_name, route_1, route_2, fee, active) 
+    $sql_c = "INSERT INTO $this->table (toda_name, route_1, route_2, fee, active) 
                 VALUES ('$name', '$route_1', '$route_2', $fee, 1)";
-    echo mysqli_query($this->db->con, $sql_c);
+    mysqli_query($this->db->con, $sql_c);
   }
 }
