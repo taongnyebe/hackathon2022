@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html >
-<head>
-  <style type="text/css">
- body {
-  margin:0px;
-  font-family:"Open Sans",sans-serif;
-  background:#ddd;
-}
 .overlay-form {
   position:absolute;
   top:50vh;
@@ -25,7 +16,7 @@
 }
 .overlay-form .close-btn {
   position:absolute;
-  top:20px;
+  top:40px;
   right:40px;
   color:#fff;
   font-size:40px;
@@ -95,40 +86,3 @@ body.activeForm .overlay-form {
               opacity 500ms ease-in-out,
               height 0ms ease-in-out 0ms;
 }
-  </style>
-</head>
-<body>
-<div class="overlay-form">
-  <div class="close-btn" onclick="toggleForm()">&times;</div>
-  <h1>Create a new account</h1>
-  <p>Join our community. Let's set up your account</p>
-  <div class="form-element">
-    <label for="fullname">Fullname</label>
-    <input type="text" id="fullname">
-  </div>
-  <div class="form-element">
-    <label for="email">Email</label>
-    <input type="email" id="email">
-  </div>
-  <div class="form-element">
-    <label for="password-1">Password</label>
-    <input type="password" id="password-1">
-  </div>
-  <div class="form-element">
-    <label for="password-2">Confirm password</label>
-    <input type="password" id="password-2">
-  </div>
-  <div class="form-element">
-    <button>Signup</button>
-  </div>
-</div>
-<div class="center">
-  <button onclick="toggleForm()">Signup</button>
-</div>
-<script>
-    function toggleForm(){
-  document.body.classList.toggle('activeForm');
-}
-</script>
-</body>
-</html>

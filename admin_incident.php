@@ -26,7 +26,6 @@
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
                                 Incidents database &emsp;
-                                <a href="" class="btn btn-primary">Add</a>
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
@@ -53,7 +52,9 @@
                                     </tfoot>
                                     <tbody>
                                         <?php
-                                            foreach ($incident->getIncidents() as $incidents ) :
+                                            if ($incident->checkTableEmpty())
+                                            {
+                                                foreach ($incident->getIncidents() as $incidents ) :
                                         ?>
                                             <tr>
                                                 <td><?php echo $incidents['severity'] ?></td>
@@ -62,11 +63,12 @@
                                                 <td><?php echo $incidents['description'] ?></td>
                                                 <td><?php echo $incidents['offender'] ?></td>
                                                 <td>
-                                                    <a href="" class="btn btn-danger">Resolve</a>
+                                                    <a href="./f_update.php?id=<?php echo $incidents['id']?>&use=incident" class="btn btn-danger">Resolve</a>
                                                 </td>
                                             </tr>
                                         <?php
-                                            endforeach;
+                                                endforeach;
+                                            }
                                         ?>
                                     </tbody>
                                 </table>

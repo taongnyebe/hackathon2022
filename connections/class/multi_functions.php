@@ -60,4 +60,18 @@ class multi_functions
             } else
                   return 2;
       }
+
+      public function checkTableEmpty()
+      {
+        $sql_c = "SELECT COUNT(id) AS count FROM $this->table WHERE active=1";
+        return $this->singlechecker($sql_c)['count'];
+      }
+
+      public function setDeactive($id)
+      {
+        echo $sql_c = "UPDATE $this->table
+                    SET active = 0
+                    WHERE id=$id;";
+        return mysqli_query($this->db->con, $sql_c);
+      }
 }

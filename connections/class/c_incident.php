@@ -12,7 +12,7 @@ class Incident extends multi_functions
 
     public function getIncidents()
     {
-        $sql_c = "SELECT * FROM $this->table";
+        $sql_c = "SELECT * FROM $this->table WHERE active=1";
         return $this->checker($sql_c);
     }
 }

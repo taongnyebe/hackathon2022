@@ -9,6 +9,7 @@
     <title>Dashboard - SB Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
     <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/popup.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 
     <?php 
@@ -17,6 +18,7 @@
     ?>
 </head>
     <body class="sb-nav-fixed">
+        <?php require './templates/popup_driver.php' ?>
         <?php require './templates/admin_nav.php' ?>
             <div id="layoutSidenav_content">
                 <main>
@@ -26,7 +28,7 @@
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
                                 Registered Database &emsp;
-                                <a href="" class="btn btn-primary">Add</a>
+                                <button onclick="toggleForm()" class="btn btn-primary">ADD</button>
                             </div>
                             <div class="card-body">
                                 <table id="datatablesSimple">
@@ -51,7 +53,9 @@
                                     </tfoot>
                                     <tbody>
                                     <?php
-                                        foreach ($driver->getDriversInfo() as $drivers) :
+                                        if ($driver->checkTableEmpty())
+                                        {
+                                            foreach ($driver->getDriversInfo() as $drivers) :
                                     ?>
                                     <tr>
                                         <td><?php echo $drivers['f_name']." ".((isset($drivers['m_name']))?$drivers['m_name'][0].".":"")." ".$drivers['f_name']." ".$drivers['suffix']?></td>
@@ -60,12 +64,12 @@
                                         <td></td>
                                         <td>TODA Here</td>
                                         <td>
-                                            <a href="" class="btn btn-success">Go!</a>
                                             <a href="" class="btn btn-secondary">Update</a>
                                         </td>
                                     </tr>
                                     <?php
-                                        endforeach;
+                                            endforeach;
+                                        }
                                     ?>
                                     </tbody>
                                 </table>
@@ -90,8 +94,8 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-        <script src="assets/demo/chart-area-demo.js"></script>
-        <script src="assets/demo/chart-bar-demo.js"></script>
+        <script src="js/overlay.js"></script>
+
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="js/datatables-simple-demo.js"></script>
     </body>
