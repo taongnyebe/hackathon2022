@@ -1,7 +1,7 @@
 <div class="overlay-form">
   <br>
   <div class="close-btn" onclick="toggleForm()">&times;</div>
-  <h1>Add Queue</h1>
+  <h1>Add Queuee</h1>
   <form action="./f_add.php?type=registered" method="post">
     <div class="form-element">
         <label for="f_name">First name</label>
